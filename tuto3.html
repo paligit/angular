@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutotial 2 AJS</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+    <script type="text/javascript" src="listaDePersonas.js"></script>
+	
+</head>
+<body ng-app>
+     <h2>Lista de Tareas</h2>
+    <div  ng-controller="ControladorPersonas">
+      <table>
+      <thead>
+      <tr>
+        <td>nombre</td>
+        <td>apellido</td>
+        <td>domicilio</td>
+        <td>curso</td>
+      </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="x in alumnos">
+          <td>
+            {{x.nombre | uppercase}}
+          </td>
+          <td>
+            {{x.apellido}}
+          </td>
+          <td>
+            {{x.domicilio}}
+          </td>
+          <td>
+            {{x.curso}}
+          </td>
+
+          <td>
+            {{x.fecha}}
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    	
+
+
+</body>
+</html>

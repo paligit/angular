@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutotial 2 AJS</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+    <script type="text/javascript" src="listadetareas.js"></script>
+	
+</head>
+<body ng-app>
+     <h2>Lista de Tareas</h2>
+
+  <div ng-controller="ControladorTareas">
+
+        <span>{{restantes()}} de {{tareas.length}}</span>
+  	    [<a href="" ng-click="eliminar()">eliminar</a>]
+    <ul class="unstyled">
+      
+       <li ng-repeat="x in tareas">
+        > 
+        <input type="checkbox" ng-model="x.hecho">
+        <span class="hecho-{{x.hecho}}"> {{x.texto}}</span>
+       </li>
+    </ul>
+
+
+    <form ng-submit="agregarTarea()"> 
+      
+      <input type="text" ng-model="textoNuevaTarea">
+      <button type="submit" class="btn btn-primary">Agregar</button>
+    </form>
+  </div>	
+
+
+</body>
+</html>
